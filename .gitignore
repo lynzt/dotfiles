@@ -1,0 +1,14 @@
+/*
+!.gitignore
+
+!/fish
+/fish/*
+!/fish/config.fish
+
+!/nvim
+nvim/*
+!/nvim/init.vim
+
+!/tmux
+tmux/*
+!/tmux/.tmux.conf
