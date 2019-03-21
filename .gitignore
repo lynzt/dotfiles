@@ -12,3 +12,7 @@ nvim/*
 !/tmux
 tmux/*
 !/tmux/.tmux.conf
+
+!/spacemacs
+spacemacs/*
+!/spacemacs/.spacemacs
