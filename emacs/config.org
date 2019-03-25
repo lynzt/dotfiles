@@ -674,7 +674,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
   (when (window-system)
-    (set-frame-font "Fira Code"))
+    (set-frame-font "Fira Code-9"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")
