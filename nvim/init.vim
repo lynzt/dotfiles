@@ -37,10 +37,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'joequery/Stupid-EasyMotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'kien/rainbow_parentheses'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 
 " languages
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
@@ -52,3 +55,4 @@ call plug#end()
 " set loc for tmp files
 set backupdir=~/tmp,.
 set directory=~/tmp,.
+

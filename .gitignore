@@ -16,3 +16,8 @@ tmux/*
 !/spacemacs
 spacemacs/*
 !/spacemacs/.spacemacs
+
+!/emacs
+emacs/*
+!/emacs/config.el
+!/emacs/config.org
