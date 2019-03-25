@@ -165,6 +165,15 @@
       (setq beacon-color "#1d829e"))
 #+END_SRC
 
+* golden ratio
+** resize
+ #+BEGIN_SRC emacs-lisp
+   (use-package golden-ratio
+     :ensure t
+     :diminish golden-ratio-mode
+     :init
+     (golden-ratio-mode 1))
+ #+END_SRC
 * window system
 ** highlight line
 #+BEGIN_SRC emacs-lisp
@@ -674,7 +683,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
   (when (window-system)
-    (set-frame-font "Fira Code-9"))
+    (set-frame-font "Fira Code-11"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")
