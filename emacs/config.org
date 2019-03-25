@@ -747,6 +747,16 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     :init
     (setq projectile-project-search-path '("~/coding/" "~/Dropbox/emacs/org/")))
 #+END_SRC
+* ag
+** project searching w/ projectile
+#+BEGIN_SRC emacs-lisp
+  (use-package ag
+    :ensure t
+    :config
+    (add-hook 'ag-mode-hook 'toggle-truncate-lines)
+    (setq ag-highlight-search t)
+    (setq ag-reuse-buffers 't))
+#+END_SRC
 * editorConfig
 #+BEGIN_SRC emacs-lisp
   (use-package editorconfig
