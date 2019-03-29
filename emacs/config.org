@@ -508,6 +508,7 @@
 * show invisibles
 #+BEGIN_SRC emacs-lisp
   (global-whitespace-mode t)
+  (setq whitespace-line-column 120)
   (setq whitespace-display-mappings
     ;; all numbers are Unicode codepoint in decimal. ⁖ (insert-char 182 1)
     '(
