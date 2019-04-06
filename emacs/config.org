@@ -10,7 +10,7 @@
     :config
     (evil-mode 1))
 #+END_SRC
-** evil-key-bindings
+** evil-collection key-bindings
 #+BEGIN_SRC emacs-lisp
   (use-package evil-collection
     :after evil
@@ -256,6 +256,8 @@
     (diminish 'undo-tree-mode)
     (diminish 'prettier-js-mode)
     (diminish 'git-gutter-mode)
+    (diminish 'editorconfig-mode)
+    (diminish 'projectile-mode)
     ;; (diminish 'subword-mode)
   )
 #+END_SRC
@@ -683,8 +685,8 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     (add-hook 'js2-mode-hook 'prettier-js-mode))
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
-  (when (window-system)
-    (set-frame-font "Fira Code-11"))
+  ;;(when (window-system)
+    ;;(set-frame-font "Fira Code-11"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")
