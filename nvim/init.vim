@@ -2,7 +2,6 @@
 let mapleader=','
 set relativenumber
 
-colorscheme ayu
 
 " paste correctly
 " set pastetoggle=<F2>
@@ -16,7 +15,7 @@ set clipboard=unnamed
 " :highlight ColorColumn ctermbg=red ctermfg=blue
 " exec 'set colorcolumn=' . join(range(2,80,3), ',')
 
-set listchars=eol:¬,tab:→\·,trail:~,extends:>,precedes:<,space:·
+" set listchars=eol:¬,tab:→\·,trail:~,extends:>,precedes:<,space:·
 set list
 
 " linting
@@ -29,17 +28,19 @@ let g:ale_lint_on_enter = 0
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'roman/golden-ratio'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'flazz/vim-colorschemes'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'joequery/Stupid-EasyMotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'zivyangll/git-blame.vim'
+Plug 'Yggdroot/indentLine'
 
 " languages
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -56,3 +57,12 @@ call plug#end()
 set backupdir=~/tmp,.
 set directory=~/tmp,.
 
+" fzf
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>s :Ag<CR>
+
+"saving
+:nmap <c-x> <c-s> :w<CR>
+
+colorscheme slate
