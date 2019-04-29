@@ -9,9 +9,11 @@ set -x PATH $GOPATH/bin $PATH
 alias abo="atom-beta"
 alias ll="ls -la"
 alias dps="docker ps -a"
+alias v="nvim"
 alias tm="tmux"
 alias cl="clear"
 alias com="git checkout master"
+
 
 
 set -x SPACEFISH_BATTERY_SHOW always
@@ -24,3 +26,6 @@ set -x SPACEFISH_GOLANG_SHOW false
 set -x SPACEFISH_AWS_SHOW false
 set -x SPACEFISH_PROMPT_ORDER battery time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep jobs exit_code char
 
+function tmux
+  command tmux -2 $argv
+end
