@@ -71,6 +71,9 @@
   ;; binding ",s"
   (define-key my-leader-map "s" 'projectile-ag)
   
+  ;; binding ",ci"
+  (define-key my-leader-map "ci" 'evilnc-comment-or-uncomment-lines)
+
 #+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
@@ -182,7 +185,6 @@
 #+BEGIN_SRC emacs-lisp
     (use-package beacon
       :ensure t
-      :bind* (("C-c b" . beacon-blink))
       :init
       (beacon-mode 1)
       (setq beacon-color "#1d829e"))
@@ -256,14 +258,13 @@
 #+END_SRC
 
 * modeline
-** spaceline
-##+BEGIN_SRC emacs-lisp
-  (use-package spaceline
+** powerline
+#+BEGIN_SRC emacs-lisp
+  (use-package powerline
     :ensure t
-    :config
-    (require 'spaceline-config)
-    (setq powerline-default-separator (quote arrow))
-    (spaceline-spacemacs-theme))
+    :init
+    (powerline-default-theme))
+
 #+END_SRC
 ** dimish - hide some minor modes
 #+BEGIN_SRC emacs-lisp
@@ -672,24 +673,27 @@
     (add-hook 'css-mode-hook 'emmet-mode))
 #+END_SRC
 * neotree
-** all the icons
-#+BEGIN_SRC emacs-lisp
-  (use-package all-the-icons
-    :ensure t)
-#+END_SRC
 ** neotree
 #+BEGIN_SRC emacs-lisp
   (use-package neotree
     :ensure t
-    :bind ("C-c k" . neotree-toggle)
+    :init
+    (require 'neotree)
+    :bind ("C-c b" . neotree-toggle)
     :config
     (setq neo-dont-be-alone t
           neo-smart-open t
-          neo-theme 'icons)
+          neo-theme 'icons
+          projectile-switch-project-action 'neotree-projectile-action)
     (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
     (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-refresh)
     (evil-define-key 'normal neotree-mode-map (kbd "u") 'neotree-select-up-node)
    )
+#+END_SRC
+** all the icons
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons
+    :ensure t)
 #+END_SRC
 * modeline (smart line mode)
 #+BEGIN_SRC emacs-lisp
@@ -745,10 +749,11 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
                ))
     (dolist (char-regexp alist)
       (set-char-table-range composition-function-table (car char-regexp)
-                            `([,(cdr char-regexp) 0 font-shape-gstring])))
-    (add-hook 'neotree-mode-hook
-              (lambda () (with-current-buffer " *NeoTree"
-                      (setq-local auto-composition-mode nil)))))
+                            `([,(cdr char-regexp) 0 font-shape-gstring]))))
+
+    ;; (add-hook 'neotree-mode-hook
+    ;;           (lambda () (with-current-buffer " *NeoTree"
+    ;;                   (setq-local auto-composition-mode nil)))))
 #+END_SRC
 * smart parens
 #+BEGIN_SRC emacs-lisp
