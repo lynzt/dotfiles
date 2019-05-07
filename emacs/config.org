@@ -57,6 +57,21 @@
     :config
     (global-evil-mc-mode))
 #+END_SRC
+** leader keys
+#+BEGIN_SRC emacs-lisp
+  (defvar my-leader-map (make-sparse-keymap)
+    "Keymap for \"leader key\" shortcuts.")
+
+  ;; binding "," to the keymap
+  (define-key evil-normal-state-map "," my-leader-map)
+
+  ;; binding ",t"
+  (define-key my-leader-map "t" 'projectile-find-file)
+
+  ;; binding ",s"
+  (define-key my-leader-map "s" 'projectile-ag)
+  
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -66,6 +81,14 @@
 	kept-old-versions 2
 	version-control t
 	create-lockfiles nil)
+#+END_SRC
+* fish shell
+#+BEGIN_SRC emacs-lisp
+  (defvar my-term-shell "/usr/local/bin/fish")
+  (defadvice ansi-term (before force-bash)
+    (interactive (list my-term-shell)))
+  (ad-activate 'ansi-term)
+
 #+END_SRC
 * frames
 ** frame size
@@ -285,8 +308,6 @@
     :bind
     ("M-x" . smex))
 #+END_SRC
-
-
 ** switch buffer
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
@@ -299,8 +320,8 @@
     (dashboard-setup-startup-hook)
     (setq dashboard-items '(
                             (bookmarks . 5)
-                            (recents . 10)
                             (projects . 5)
+                            (recents . 10)
                             ))
     (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))
 
@@ -508,7 +529,7 @@
     (setq ztree-dir-move-focus t))
 #+END_SRC
 * show invisibles
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (global-whitespace-mode t)
   (setq whitespace-line-column 120)
   (setq whitespace-display-mappings
@@ -518,6 +539,15 @@
       (newline-mark 10 [8629 10]) ; 10 LINE FEED
       (tab-mark 9 [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
       ))
+#+END_SRC
+* indent guidelines
+#+BEGIN_SRC emacs-lisp
+  (use-package highlight-indent-guides
+    :ensure t
+    :init
+    (highlight-indent-guides-mode 1)
+    :config
+    (setq highlight-indent-guides-method 'character))
 #+END_SRC
 * multiple cursors
 #+BEGIN_SRC emacs-lisp
@@ -651,7 +681,7 @@
 #+BEGIN_SRC emacs-lisp
   (use-package neotree
     :ensure t
-    :bind ("C-c k" . neotree)
+    :bind ("C-c k" . neotree-toggle)
     :config
     (setq neo-dont-be-alone t
           neo-smart-open t
