@@ -55,7 +55,7 @@
     :ensure t
     :after evil
     :config
-    (global-evil-mc-mode))
+    (global-evil-mc-mode 1))
 #+END_SRC
 ** leader keys
 #+BEGIN_SRC emacs-lisp
@@ -85,7 +85,12 @@
 	version-control t
 	create-lockfiles nil)
 #+END_SRC
-* fish shell
+* term
+** ansi-term
+#+BEGIN_SRC emacs-lisp
+  (evil-set-initial-state 'term-mode 'emacs)
+#+END_SRC
+** fish shell
 #+BEGIN_SRC emacs-lisp
   (defvar my-term-shell "/usr/local/bin/fish")
   (defadvice ansi-term (before force-bash)
@@ -728,9 +733,9 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
                  (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
                  (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
                  (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-                 (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-                 (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
-                 (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+                 ;; (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+                 ;; (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+                 ;; (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
                  (48 . ".\\(?:x[a-zA-Z]\\)")
                  (58 . ".\\(?:::\\|[:=]\\)")
                  (59 . ".\\(?:;;\\|;\\)")
