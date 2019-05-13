@@ -266,11 +266,18 @@
 ** powerline
 #+BEGIN_SRC emacs-lisp
   (use-package powerline
-    :ensure t
-    :init
-    (powerline-default-theme))
+    :ensure t)
 
 #+END_SRC
+** airline-theme
+#+BEGIN_SRC emacs-lisp
+  (use-package airline-themes
+    :ensure t
+    :init
+    (require 'airline-themes)
+    (load-theme 'airline-doom-one t))
+#+END_SRC
+
 ** dimish - hide some minor modes
 #+BEGIN_SRC emacs-lisp
   (use-package diminish
