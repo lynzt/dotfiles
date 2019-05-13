@@ -282,7 +282,7 @@
 #+BEGIN_SRC emacs-lisp
   (use-package diminish
     :ensure t
-    :init
+    :config
     (diminish 'beacon-mode)
     (diminish 'rainbow-mode)
     (diminish 'which-key-mode)
@@ -294,6 +294,10 @@
     (diminish 'git-gutter-mode)
     (diminish 'editorconfig-mode)
     (diminish 'projectile-mode)
+    (diminish 'smartparens-mode)
+    (diminish 'flycheck-mode)
+    (diminish 'company-mode)
+
     ;; (diminish 'subword-mode)
   )
 #+END_SRC
@@ -335,6 +339,7 @@
                             (bookmarks . 5)
                             (projects . 5)
                             (recents . 10)
+                            (agenda . 5)
                             ))
     (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))
 
@@ -834,3 +839,4 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     :config
     (editorconfig-mode 1))
 #+END_SRC
+* something to add
