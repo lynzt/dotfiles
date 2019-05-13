@@ -652,7 +652,18 @@
 * go mode
 #+BEGIN_SRC emacs-lisp
   (use-package go-mode
-    :ensure t)
+    :ensure t
+    :mode "\\.go\\'"
+    )
+#+END_SRC
+* flycheck
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :init (global-flycheck-mode t))
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (package-install 'exec-path-from-shell)
+  (exec-path-from-shell-initialize)
 #+END_SRC
 * indent levels
 #+BEGIN_SRC emacs-lisp
