@@ -173,6 +173,10 @@
 #+BEGIN_SRC emacs-lisp
   (add-hook 'org-mode-hood 'org-indent-mode)
 #+END_SRC
+** set org adjenda
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-files (quote ("~/Dropbox/emacs/org/tasks/task1.org")))
+#+END_SRC
 * exwm
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
@@ -294,7 +298,7 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 #+END_SRC
-* ido flx
+** ido-flx 
 #+BEGIN_SRC emacs-lisp
   (use-package flx-ido
     :ensure t
@@ -809,7 +813,11 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     :config
     (editorconfig-mode 1))
 #+END_SRC
-* something to add
+* dumb jump
+#+BEGIN_SRC emacs-lisp
+  (use-package dumb-jump
+    :ensure t)
+#+END_SRC
 * modeline
 ** powerline
 #+BEGIN_SRC emacs-lisp
