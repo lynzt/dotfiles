@@ -349,7 +349,7 @@
 ** Show Hex colors
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-mode
-    :ensure t
+   :ensure t
     :init (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
@@ -706,7 +706,7 @@
 e   (add-hook 'web-mode-hook 'prettier-js-mode)
     (add-hook 'js2-mode-hook 'prettier-js-mode))
 #+END_SRC
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   ;;(when (window-system)
     ;;(set-frame-font "Fira Code-11"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
