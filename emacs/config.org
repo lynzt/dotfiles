@@ -57,28 +57,28 @@
     :config
     (global-evil-mc-mode 1))
 #+END_SRC
+** evil-magit
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-magit
+    :ensure t
+    :init
+    (setq evil-magit-state 'normal))
+#+END_SRC
 ** leader keys
 #+BEGIN_SRC emacs-lisp
   (defvar my-leader-map (make-sparse-keymap)
     "Keymap for \"leader key\" shortcuts.")
 
-  ;; binding "," to the keymap
   (define-key evil-normal-state-map "," my-leader-map)
 
-  ;; binding ",t"
-  (define-key my-leader-map "t" 'projectile-find-file)
-
-  ;; binding ",s"
-  (define-key my-leader-map "s" 'projectile-ag)
-  
-  ;; binding ",f"
-  (define-key my-leader-map "f" 'avy-goto-char-timer)
-  
-  ;; binding ",cc"
-  (define-key my-leader-map "cc" 'evilnc-comment-or-uncomment-lines)
-
-  ;; binding ",b"
   (define-key my-leader-map "b" 'er-switch-to-previous-buffer)
+  (define-key my-leader-map "c" 'evilnc-comment-or-uncomment-lines)
+  (define-key my-leader-map "d" 'dumb-jump-go)
+  (define-key my-leader-map "f" 'avy-goto-char-timer)
+  (define-key my-leader-map "s" 'counsel-git-grep)
+  (define-key my-leader-map "t" 'counsel-git)
+  (define-key my-leader-map "x" 'er/expand-region)
+  (define-key my-leader-map "z" 'er/contract-region)
 #+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
@@ -129,8 +129,7 @@
 ** expand region
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
-    :ensure t
-    :bind ("C-q" . er/expand-region))
+    :ensure t)
 #+END_SRC
 * duplicate line or region
 #+BEGIN_SRC emacs-lisp
@@ -161,7 +160,7 @@
   (use-package org-bullets
     :ensure t
     :config
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 #+END_SRC
 
 ** basic config
@@ -757,6 +756,15 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     ;;           (lambda () (with-current-buffer " *NeoTree"
     ;;                   (setq-local auto-composition-mode nil)))))
 #+END_SRC
+* counsel
+#+BEGIN_SRC emacs-lisp
+ (use-package counsel
+  :ensure t
+  :config
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+)
+
+#+END_SRC
 * smart parens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
@@ -786,7 +794,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     (setq markdown-command "multimarkdown"))
 #+END_SRC
 * projectile
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package projectile
     :ensure t
     :config
