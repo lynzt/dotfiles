@@ -76,8 +76,10 @@
   (define-key my-leader-map "d" 'dumb-jump-go)
   (define-key my-leader-map "f" 'avy-goto-char-timer)
   (define-key my-leader-map "m" 'livedown-preview)
+  ;; (define-key my-leader-map "s" 'projectile-ag)
+  (define-key my-leader-map "t" 'projectile-find-file)
   (define-key my-leader-map "s" 'counsel-git-grep)
-  (define-key my-leader-map "t" 'counsel-git)
+  ;; (define-key my-leader-map "t" 'counsel-git)
   (define-key my-leader-map "x" 'er/expand-region)
   (define-key my-leader-map "z" 'er/contract-region)
 #+END_SRC
@@ -171,7 +173,8 @@
 #+END_SRC
 ** indent
 #+BEGIN_SRC emacs-lisp
-  (add-hook 'org-mode-hood 'org-indent-mode)
+  ;; (add-hook 'org-mode-hood 'org-indent-mode)
+  (setq org-src-tab-acts-natively t)
 #+END_SRC
 ** set org adjenda
 #+BEGIN_SRC emacs-lisp
@@ -552,7 +555,8 @@
     :init
     (progn
       (global-set-key (kbd "C-c m") 'mc/edit-lines)
-      (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+      ;; (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+      (global-set-key (kbd "C->") 'mc/mark-next-like-this)
       ;; (global-set-key (kbd "M-D") 'mc/mark-previous-like-this)
       (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
 #+END_SRC
@@ -572,6 +576,14 @@
     (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
 ##+END_SRC
 * pair / match delimiters
+#+BEGIN_SRC emacs-lisp
+  (use-package autopair
+    :ensure t
+    :diminish autopair-mode
+    :config
+    (autopair-global-mode 1))
+
+#+END_SRC
 ##+BEGIN_SRC emacs-lisp
   (defun electric-pair()
     (interactive)
@@ -771,7 +783,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
 
 #+END_SRC
 * smart parens
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package smartparens
     :ensure t
     :init
@@ -804,7 +816,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
   (require 'livedown)
 #+END_SRC
 * projectile
-##+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (use-package projectile
     :ensure t
     :config
