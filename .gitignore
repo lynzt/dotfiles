@@ -24,4 +24,7 @@ emacs/*
 
 !/doom
 doom/*
-!/doom/.doom.d
+!/doom/config.el
+!/doom/init.el
+!/packages.el
+
