@@ -1,0 +1,1 @@
+/Users/lynzt/.doom.d

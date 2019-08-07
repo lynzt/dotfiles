@@ -21,3 +21,7 @@ spacemacs/*
 emacs/*
 !/emacs/config.el
 !/emacs/config.org
+
+!/doom
+doom/*
+!/doom/.doom.d
