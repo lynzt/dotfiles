@@ -5,6 +5,7 @@ end
 set -x GOPATH ~/coding/go
 set -x PATH /usr/local/bin $PATH
 set -x PATH $GOPATH/bin $PATH
+set -x PATH ~/.emacs.d/bin $PATH
 
 alias abo="atom-beta"
 alias ll="ls -la"
