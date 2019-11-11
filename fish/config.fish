@@ -8,6 +8,7 @@ set -x PATH $GOPATH/bin $PATH
 set -x PATH ~/.emacs.d/bin $PATH
 
 alias abo="atom-beta"
+alias ci="code-insiders"
 alias ll="ls -la"
 alias dps="docker ps -a"
 alias v="nvim"
@@ -30,3 +31,4 @@ set -x SPACEFISH_PROMPT_ORDER battery time user dir host git package node docker
 function tmux
   command tmux -2 $argv
 end
+set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
