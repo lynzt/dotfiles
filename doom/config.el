@@ -38,8 +38,10 @@
 ;;; (setq doom-theme 'doom-nord)
 (setq doom-theme 'doom-dracula)
 
-;;; modeline stuff
+;;; modeline stuff - https://github.com/seagle0128/doom-modeline
 (setq doom-modeline-icon (display-graphic-p))
 (setq doom-modeline-major-mode-icon t)
 (setq doom-modeline-major-mode-color-icon t)
 (setq doom-modeline-indent-info t)
+(setq doom-modeline-buffer-file-name-style 'truncate-upto-root)
+(setq doom-modeline-modal-icon t)
