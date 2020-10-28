@@ -6,6 +6,9 @@ set -x GOPATH ~/coding/go
 set -x PATH /usr/local/bin $PATH
 set -x PATH $GOPATH/bin $PATH
 set -x PATH ~/.emacs.d/bin $PATH
+set -x PATH /usr/local/opt/python@3.8/bin $PATH
+set -x PATH ~/.nodenv/bin $PATH
+
 
 alias abo="atom-beta"
 alias ci="code-insiders"
@@ -15,6 +18,7 @@ alias v="nvim"
 alias tm="tmux"
 alias cl="clear"
 alias com="git checkout master"
+alias bd="git branch -D"
 
 
 
@@ -31,4 +35,7 @@ set -x SPACEFISH_PROMPT_ORDER battery time user dir host git package node docker
 function tmux
   command tmux -2 $argv
 end
-set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
+
+status --is-interactive; and source (nodenv init -|psub)
+
+source /usr/local/opt/asdf/asdf.fish
