@@ -31,25 +31,29 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 Plug 'roman/golden-ratio'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 Plug 'joequery/Stupid-EasyMotion'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-surround'
 
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
-Plug 'zivyangll/git-blame.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive'
+" Plug 'luochen1990/rainbow'
+
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'zivyangll/git-blame.vim'
+" Plug 'Yggdroot/indentLine'
 
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " languages
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -70,9 +74,15 @@ let g:netrw_banner = 0 " supress netrw header
 nmap <Leader>e :Explore<CR>
 
 " fzf
-nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>s :Ag<CR>
+nnoremap <silent> <leader>f :FZF<cr>
+nnoremap <silent> <leader>F :FZF ~<cr>
+" Ripgreip
+nnoremap <silent> <leader>. :Rg<cr>
+nnoremap <silent> <leader>, :Buffers<cr>
+
+" nmap ; :Buffers<CR>
+" nmap <Leader>t :Files<CR>
+" nmap <Leader>s :Ag<CR>
 
 "saving
 :nmap <c-x> <c-s> :w<CR>
@@ -89,8 +99,6 @@ let g:rainbow_active = 1
 let g:indentLine_char = '│'
 let g:indentLine_showFirstIndentLevel = 1
 
-" airline filename path
-let g:airline#extensions#tabline#formatter = 'default'
 
 " go color settings (beautify)
 let g:go_highlight_types = 1
@@ -98,11 +106,15 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme='dracula'
 
+" airline filename path
+"let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 "
 
 " colorscheme slate
 set background=dark
-colorscheme palenight
+" colorscheme palenight
+colorscheme dracula
 
