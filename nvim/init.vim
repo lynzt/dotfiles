@@ -40,10 +40,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'joequery/Stupid-EasyMotion'
 Plug 'tpope/vim-surround'
 
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-" Plug 'luochen1990/rainbow'
 
-" Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'zivyangll/git-blame.vim'
 " Plug 'Yggdroot/indentLine'
@@ -87,13 +86,23 @@ nnoremap <silent> <leader>, :Buffers<cr>
 "saving
 :nmap <c-x> <c-s> :w<CR>
 
+" signify
+let g:signify_mapping_next_hunk = '<leader>gj'
+let g:signify_mapping_prev_hunk = '<leader>gk'
+let g:signify_mapping_toggle_highlight = '<leader>gh'
+
 " linting
 let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 
+" fugitive
+nmap <leader>gs :G<CR>
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+
 " rainbow
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 " indentLine
 let g:indentLine_char = '│'

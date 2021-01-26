@@ -8,6 +8,8 @@ set -x PATH $GOPATH/bin $PATH
 set -x PATH ~/.emacs.d/bin $PATH
 set -x PATH /usr/local/opt/python@3.8/bin $PATH
 set -x PATH ~/.nodenv/bin $PATH
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -Ux fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
 
 alias abo="atom-beta"
