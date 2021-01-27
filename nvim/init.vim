@@ -1,13 +1,14 @@
 syntax on
 
 set noerrorbells
-set nu " line numbers
+set nu " see line number even w/ relitive numbers (vs 0)
 set nowrap
 set smartcase " case insensitive search till enter cap
 set noswapfile "no vim.swap files created
 set nobackup
 " set undodir=~/.config/nvim/undodir " where to store undo changes
 set undofile " file per file
+set scrolloff=8 " start scrolling at 8 lines end / beg of file
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -30,7 +31,7 @@ set autoindent
 set copyindent      " copy indent from the previous line
 
 " show hidden chars
-" :set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 "
 " highlight ColorColumn ctermbg=magenta
 " call matchadd('ColorColumn', '\%81v', 100)
@@ -45,6 +46,7 @@ set copyindent      " copy indent from the previous line
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter' " 
 
 Plug 'roman/golden-ratio'
 Plug 'editorconfig/editorconfig-vim'
@@ -55,9 +57,9 @@ Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-Plug 'ajh17/vimcompletesme' " complete and jump to def
-Plug 'danilamihailov/beacon.nvim' " blink 
-Plug 't9md/vim-choosewin' " asdf
+Plug 'ajh17/vimcompletesme' " completg and jump to def
+Plug 'danilamihailov/beacon.nvim' " like emacs beacon 
+Plug 't9md/vim-choosewin' " like emacs switch window
 
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'zivyangll/git-blame.vim'
@@ -91,7 +93,7 @@ set directory=~/tmp,.
 " nnoremap <leader>k :wincmd k<CR>
 " nnoremap <leader>l :wincmd l<CR>
 
-nmap <Leader>.. <Plug>(choosewin)
+nmap <Leader>, <Plug>(choosewin)
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " netrw
@@ -101,9 +103,13 @@ nmap <Leader>e :Explore<CR>
 " fzf
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
+
 " Ripgreip
 nnoremap <silent> <leader>. :Rg<cr>
-nnoremap <silent> <leader>, :Buffers<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
+" search file for specific chars
+nnoremap <silent> <leader>bl :BLines<cr> 
+nnoremap <silent> <leader>bh :History:<cr> 
 
 " nmap ; :Buffers<CR>
 " nmap <Leader>t :Files<CR>
@@ -122,7 +128,7 @@ let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 
-" fugitive
+" fugitive - git
 nmap <leader>gs :G<CR>
 nmap <leader>gh :diffget //3<CR>
 nmap <leader>gu :diffget //2<CR>
