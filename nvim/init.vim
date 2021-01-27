@@ -1,4 +1,18 @@
-" Set <space> to leader
+syntax on
+
+set noerrorbells
+set nu " line numbers
+set nowrap
+set smartcase " case insensitive search till enter cap
+set noswapfile "no vim.swap files created
+set nobackup
+" set undodir=~/.config/nvim/undodir " where to store undo changes
+set undofile " file per file
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
 let mapleader=','
 set relativenumber
 set number
@@ -6,8 +20,6 @@ set number
 " paste correctly
 " set pastetoggle=<F2>
 set clipboard=unnamed
-
-
 
 " tabs && spaces
 set tabstop=2       " number of visual spaces per TAB
@@ -20,8 +32,8 @@ set copyindent      " copy indent from the previous line
 " show hidden chars
 " :set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 "
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+" highlight ColorColumn ctermbg=magenta
+" call matchadd('ColorColumn', '\%81v', 100)
 " :highlight ColorColumn ctermbg=red ctermfg=blue
 " exec 'set colorcolumn=' . join(range(2,80,3), ',')
 
@@ -42,6 +54,10 @@ Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+
+Plug 'ajh17/vimcompletesme' " complete and jump to def
+Plug 'danilamihailov/beacon.nvim' " blink 
+Plug 't9md/vim-choosewin' " asdf
 
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'zivyangll/git-blame.vim'
@@ -67,6 +83,16 @@ call plug#end()
 " set loc for tmp files
 set backupdir=~/tmp,.
 set directory=~/tmp,.
+
+
+" window movement
+" nnoremap <leader>h :wincmd h<CR>
+" nnoremap <leader>j :wincmd j<CR>
+" nnoremap <leader>k :wincmd k<CR>
+" nnoremap <leader>l :wincmd l<CR>
+
+nmap <Leader>.. <Plug>(choosewin)
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " netrw
 let g:netrw_banner = 0 " supress netrw header
@@ -126,4 +152,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 set background=dark
 " colorscheme palenight
 colorscheme dracula
+
+
 
