@@ -8,7 +8,7 @@ set noswapfile "no vim.swap files created
 set nobackup
 " set undodir=~/.config/nvim/undodir " where to store undo changes
 set undofile " file per file
-set scrolloff=8 " start scrolling at 8 lines end / beg of file
+set scrolloff=4 " start scrolling at 8 lines end / beg of file
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -51,13 +51,18 @@ Plug 'airblade/vim-rooter' "
 Plug 'roman/golden-ratio'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'christoomey/vim-tmux-navigator'
-Plug 'joequery/Stupid-EasyMotion'
+" Plug 'joequery/Stupid-EasyMotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'idanarye/vim-merginal'
 
-Plug 'ajh17/vimcompletesme' " completg and jump to def
+
+" Plug 'ajh17/vimcompletesme' " completg and jump to def
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'danilamihailov/beacon.nvim' " like emacs beacon 
 Plug 't9md/vim-choosewin' " like emacs switch window
 
@@ -71,6 +76,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'gruvbox-community/gruvbox'
 
 " languages
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -93,8 +99,18 @@ set directory=~/tmp,.
 " nnoremap <leader>k :wincmd k<CR>
 " nnoremap <leader>l :wincmd l<CR>
 
-nmap <Leader>, <Plug>(choosewin)
+nmap <Leader>c <Plug>(choosewin)
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
+" tabs
+" next tab
+nnoremap <silent> <leader>tn :tabn<cr> 
+" close current tab
+nnoremap <silent> <leader>tc :tabc<cr> 
+" close all but current tab
+nnoremap <silent> <leader>to :tabo<cr> 
+
+
 
 " netrw
 let g:netrw_banner = 0 " supress netrw header
@@ -114,9 +130,10 @@ nnoremap <silent> <leader>bh :History:<cr>
 " nmap ; :Buffers<CR>
 " nmap <Leader>t :Files<CR>
 " nmap <Leader>s :Ag<CR>
+" source $HOME/.config/nvim/plug-config/coc.vim
 
 "saving
-:nmap <c-x> <c-s> :w<CR>
+" :nmap <c-x> <c-s> :w<CR>
 
 " signify
 let g:signify_mapping_next_hunk = '<leader>gj'
@@ -129,9 +146,13 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
 " fugitive - git
-nmap <leader>gs :G<CR>
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
+" let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gh :diffget //3<CR>
+nnoremap <leader>gu :diffget //2<CR>
+nnoremap <leader>gc :GCheckout<CR>
 
 " rainbow
 " let g:rainbow_active = 1
@@ -157,7 +178,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " colorscheme slate
 set background=dark
 " colorscheme palenight
-colorscheme dracula
+" colorscheme dracula
+colorscheme gruvbox
 
 
 

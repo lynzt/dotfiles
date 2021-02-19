@@ -20,7 +20,6 @@ alias cl="clear"
 alias com="git checkout master"
 alias bd="git branch -D"
 
-
 set -x SPACEFISH_BATTERY_SHOW always
 set -x fish_greeting "Don't wait. The time will never be just right"
 set -x SPACEFISH_DIR_PREFIX ''
