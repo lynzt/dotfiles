@@ -45,10 +45,11 @@ yabai -m config right_padding                12
 yabai -m config window_gap                   06
 
 # disable yabai for these applications
-yabi -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
-yabi -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabi -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
-yabi -m rule --add app="^System Information$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add title='Preferences$' manage=off topmost=on
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 
 
 # done to allow limelight to show green boarder
