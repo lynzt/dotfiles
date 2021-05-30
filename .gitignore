@@ -36,6 +36,10 @@ yabai/*
 limelight/*
 !/limelight/limelightrc
 
+!/skhd
+skhd/*
+!/skhd/skhdrc
+
 !/htop
 htop/*
 !/htop/htoprc
