@@ -8,7 +8,7 @@
 ;;
 ;; projectile - auto set search path
 (setq
- projectile-project-search-path '("~/coding/" "~/coding/tw/" "~/coding/react" "~/coding/interviews" "~/Dropbox/emacs/org"))
+  projectile-project-search-path '("~/coding/" "~/coding/tw/" "~/coding/react" "~/coding/interviews" "~/Dropbox/emacs/org"))
 
 ;;; "Switch to previously open buffer.
 ;;;     Repeated invocations toggle between the two most recently open buffers."
@@ -38,8 +38,10 @@
 ;; (setq doom-theme 'doom-dark+)
 ;; (setq doom-theme 'doom-losvkem)
 ;; (setq doom-theme 'doom-molokai)
-;;; (setq doom-theme 'doom-nord)
-(setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-nord)
+;; (setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-Iosvkem)
+;; (setq doom-theme 'doom-dracula)
 ;; (setq doom-theme 'doom-dracula-brighter-comments)
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 14))

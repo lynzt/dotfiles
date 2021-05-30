@@ -28,3 +28,21 @@ doom/*
 !/doom/init.el
 !/packages.el
 
+!/yabai
+yabai/*
+!/yabai/yabairc
+
+!/limelight
+limelight/*
+!/limelight/limelightrc
+
+!/htop
+htop/*
+!/htop/htoprc
+
+!/karabiner
+karabiner/*
+!/karabiner/karabiner.json
+
+!/omf
+
