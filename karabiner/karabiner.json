@@ -36,7 +36,6 @@
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
-                                            "left_command",
                                             "left_control",
                                             "left_option"
                                         ]
@@ -47,24 +46,29 @@
                         ]
                     },
                     {
-                        "description": "Toggle caps lock w/ left_shift and right_shift",
+                        "description": "Escape is escape when single press, Hyper on press and hold.",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_shift",
+                                    "key_code": "escape",
                                     "modifiers": {
-                                        "mandatory": ["right_shift"],
-                                        "optional": ["caps_lock"]
+                                        "optional": [
+                                            "any"
+                                        ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "left_shift"
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
