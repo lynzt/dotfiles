@@ -8,7 +8,7 @@
 ;;
 ;; projectile - auto set search path
 (setq
-  projectile-project-search-path '("~/coding/" "~/coding/tw/" "~/coding/react" "~/coding/interviews" "~/Dropbox/emacs/org"))
+  projectile-project-search-path '("~/coding/" "~/coding/mine/" "~/coding/tw/"))
 
 ;;; "Switch to previously open buffer.
 ;;;     Repeated invocations toggle between the two most recently open buffers."
@@ -62,35 +62,36 @@
 
 
 ;; md-roam
-(use-package! md-roam ; load immediately, before org-roam
-  :config
-  (setq md-roam-file-extension-single "md"))
-    ;you can omit this if md, which is the default.
+;;(use-package! md-roam ; load immediately, before org-roam
+;;  :config
+;;  (setq md-roam-file-extension-single "md"))
+;;    ;you can omit this if md, which is the default.
 
-;; roam settings
-(after! org
-  (setq org-directory "~/Dropbox/emacs/org/"
-        org-roam-directory (concat org-directory "roam")))
-
+;; ;; roam settings
 ;; (after! org
-;;   (setq org-roam-dailies-directory "~/Dropbox/emacs/org/roam/daily/"))
-
-(setq org-roam-dailies-directory "~/Dropbox/emacs/org/roam/daily/")
-
-(setq org-roam-dailies-capture-templates
-      '(("d" "default" entry
-         #'org-roam-capture--get-point
-         "* %?"
-         :file-name "daily/%<%Y-%m-%d-%a>"
-         :head "#+title: %<%Y-%m-%d-%a>\n\n")))
-
-(map! :leader
-      (:prefix ("k" . "daily")
-         :desc "New today" "k" #'org-roam-dailies-find-today
-         :desc "See yesterday" "j" #'org-roam-dailies-find-yesterday
-         :desc "See tomorrow" "l" #'org-roam-dailies-find-tomorrow
-         :desc "Insert link" "i" #'org-roam-insert-immediate
-         :desc "Find/Create note" "f" #'org-roam-find-file))
+;;   (setq org-directory "~/Dropbox/emacs/org/"
+;;         org-roam-directory (concat org-directory "roam")))
+;;
+;; ;; (after! org
+;; ;;   (setq org-roam-dailies-directory "~/Dropbox/emacs/org/roam/daily/"))
+;;
+;; (setq org-roam-dailies-directory "~/Dropbox/emacs/org/roam/daily/")
+;;
+;; (setq org-roam-dailies-capture-templates
+;;       '(("d" "default" entry
+;;          #'org-roam-capture--get-point
+;;          "* %?"
+;;          :file-name "daily/%<%Y-%m-%d-%a>"
+;;          :head "#+title: %<%Y-%m-%d-%a>\n\n")))
+;;
+;; (map! :leader
+;;       (:prefix ("k" . "daily")
+;;          :desc "New today" "k" #'org-roam-dailies-find-today
+;;          :desc "See yesterday" "j" #'org-roam-dailies-find-yesterday
+;;          :desc "See tomorrow" "l" #'org-roam-dailies-find-tomorrow
+;;          :desc "Insert link" "i" #'org-roam-insert-immediate
+;;          :desc "Find/Create note" "f" #'org-roam-find-file))
+;; :warning
 
 ;; (defun org-roam-dailies-capture-today ()
 ;;   "Capture a note into the daily note for today."
@@ -110,4 +111,4 @@
 ;; show invisibles
 (global-whitespace-mode +1)
 
-(add-hook 'after-init-hook 'org-roam-mode)
+;; (add-hook 'after-init-hook 'org-roam-mode)

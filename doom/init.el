@@ -82,7 +82,7 @@
        ;;gist              ; interacting with github gists
        ;;(lookup           ; helps you navigate your code and documentation
        ;; +docsets)        ; ...or in Dash docsets locally
-       ;;lsp
+       lsp
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
@@ -91,7 +91,7 @@
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;terraform         ; infrastructure as code
-       ;;tmux              ; an API for interacting with tmux
+       tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
 
@@ -131,8 +131,8 @@
         ;; +ipython         ; ipython support for babel
         +pandoc          ; pandoc integration into org's exporter
         ;;+present         ; using Emacs for presentations
-        +journal         ; use for daily journal
-        +roam)           ; use roam
+        +journal)         ; use for daily journal
+        ;;+roam           ; use roam
        perl              ; write code no one else can comprehend
        ;; php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
@@ -145,11 +145,12 @@
        ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;scheme            ; a fully conniving family of lisps
-       sh                ; she sells {ba,z,fi}sh shells on the C xor
+       sh                ; she sells {ba,z,fi}sh shells on the C xor2004
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        web               ; the tubes
+       (yaml +lsp)        ; yaml / yml
        ;;vala              ; GObjective-C
 
        :email
