@@ -8,6 +8,7 @@ set -x PATH /opt/homebrew/bin $PATH
 set -x PATH /usr/local/bin $PATH
 set -x PATH ~/.emacs.d/bin $PATH
 set -x PATH /usr/local/opt/python@3.8/bin $PATH
+set -x PATH /opt/metasploit-framework/bin $PATH
 # set -x PATH ~/.nodenv/bin $PATH
 
 
@@ -19,6 +20,7 @@ alias v="nvim"
 alias tm="tmux"
 alias cl="clear"
 alias com="git checkout master"
+alias nnn="nnn -d -e -H -r"
 
 # GIT commands
 alias bd="git branch -D"
@@ -55,87 +57,5 @@ echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/co
 
 direnv hook fish | source
 set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 source /opt/homebrew/opt/asdf/libexec/asdf.fish

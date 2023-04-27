@@ -28,10 +28,36 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "left_option"
+                                            "option"
                                         ]
                                     }
                                 },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right command_key is Hyper on press and hold.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -58,7 +84,8 @@
                                         "key_code": "left_shift",
                                         "modifiers": [
                                             "left_control",
-                                            "left_option"
+                                            "left_option",
+                                            "left_command"
                                         ]
                                     }
                                 ],
@@ -88,7 +115,8 @@
                                         "key_code": "left_shift",
                                         "modifiers": [
                                             "left_control",
-                                            "left_option"
+                                            "left_option",
+                                            "left_command"
                                         ]
                                     }
                                 ],

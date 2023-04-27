@@ -8,7 +8,10 @@
 ;;
 ;; projectile - auto set search path
 (setq
-  projectile-project-search-path '("~/coding/" "~/coding/mine/" "~/coding/tw/"))
+  projectile-project-search-path '("~/coding/"
+                                   "~/coding/mine/"
+                                   "~/coding/tw/"
+                                   "~/coding/ob-test"))
 
 ;;; "Switch to previously open buffer.
 ;;;     Repeated invocations toggle between the two most recently open buffers."
