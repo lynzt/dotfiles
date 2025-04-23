@@ -11,6 +11,9 @@
   projectile-project-search-path '("~/coding/"
                                    "~/coding/mine/"
                                    "~/coding/tw/"
+                                   "~/coding/llms/"
+                                   "~/coding/ccaoa/"
+                                   "~/coding/ccaoa/ccrs-frontend"
                                    "~/coding/ob-test"))
 
 ;;; "Switch to previously open buffer.
@@ -38,17 +41,19 @@
       evil-insert-state-cursor '(bar "medium sea green")
       evil-visual-state-cursor '(hollow "orange"))
 
-;; (setq doom-theme 'doom-dark+)
+;; (setq doom-theme 'doom-dark+mine)
 ;; (setq doom-theme 'doom-losvkem)
-;; (setq doom-theme 'doom-molokai)
-;; (setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-molokai)
+;;(setq doom-theme 'doom-nord)
 ;; (setq doom-theme 'doom-gruvbox)
-(setq doom-theme 'doom-Iosvkem)
+;; (setq doom-theme 'doom-Iosvkem)
 ;; (setq doom-theme 'doom-dracula)
 ;; (setq doom-theme 'doom-dracula-brighter-comments)
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14))
+;; (setq doom-font (font-spec :family "JetBrains Mono" :size 14))
 ;;(setq doom-font (font-spec :family "Monoid" :size 12))
+;;(setq doom-font (font-spec :family "Inconsolata-g for Powerline" :size 12))
+(setq doom-font (font-spec :family "Fira Code" :size 12))
 
 ;;; modeline stuff - https://github.com/seagle0128/doom-modeline
 (setq doom-modeline-icon (display-graphic-p))

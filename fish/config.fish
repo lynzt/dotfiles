@@ -25,7 +25,8 @@ alias nnn="nnn -d -e -H -r"
 # GIT commands
 alias bd="git branch -D"
 alias st="git status -s"
-alias st="git checkout"
+alias co="git checkout"
+alias lol="git log --graph --decorate --oneline"
 
 set -x SPACEFISH_BATTERY_SHOW always
 set -x fish_greeting "Don't wait. The time will never be just right"
@@ -52,10 +53,20 @@ end
 
 # status --is-interactive; and source (nodenv init -|psub)
 
-# source /usr/local/opt/asdf/asdf.fish
-echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
-
 direnv hook fish | source
 set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/lindsay/miniconda3/bin/conda
+    eval /Users/lindsay/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/Users/lindsay/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/Users/lindsay/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/Users/lindsay/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
 
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
