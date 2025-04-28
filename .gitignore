@@ -8,6 +8,7 @@
 !/nvim
 nvim/*
 !/nvim/init.vim
+!/nvim/init.lua
 
 !/tmux
 tmux/*
