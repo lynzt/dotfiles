@@ -51,3 +51,6 @@ karabiner/*
 
 !/omf
 
+!/borders
+borders/*
+!borders/bordersrc
