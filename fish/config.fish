@@ -9,6 +9,8 @@ set -x PATH /usr/local/bin $PATH
 set -x PATH ~/.emacs.d/bin $PATH
 set -x PATH /usr/local/opt/python@3.8/bin $PATH
 set -x PATH /opt/metasploit-framework/bin $PATH
+set -x STARSHIP_CONFIG ~/.config/starship/zephyr.toml
+set -x PATH $STARSHIP $PATH
 # set -x PATH ~/.nodenv/bin $PATH
 
 
@@ -23,20 +25,12 @@ alias com="git checkout master"
 alias nnn="nnn -d -e -H -r"
 
 # GIT commands
-alias bd="git branch -D"
-alias st="git status -s"
-alias co="git checkout"
-alias lol="git log --graph --decorate --oneline"
+abbr -a gst git status
+abbr -a gl git log --oneline --graph --all
+abbr -a gco git checkout
+abbr -a gcb git checkout -b
 
-set -x SPACEFISH_BATTERY_SHOW always
 set -x fish_greeting "Don't wait. The time will never be just right"
-set -x SPACEFISH_DIR_PREFIX ''
-set -x SPACEFISH_PACKAGE_SHOW false
-set -x SPACEFISH_NODE_SHOW false
-set -x SPACEFISH_DOCKER_SHOW false
-set -x SPACEFISH_GOLANG_SHOW false
-set -x SPACEFISH_AWS_SHOW false
-set -x SPACEFISH_PROMPT_ORDER battery time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep jobs exit_code char
 
 # fish Completions
 if test -d (brew --prefix)"/share/fish/completions"
@@ -69,4 +63,19 @@ else
 end
 # <<< conda initialize <<<
 
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+starship init fish | source
+
+# ASDF configuration code
+if test -z $ASDF_DATA_DIR
+    set _asdf_shims "$HOME/.asdf/shims"
+else
+    set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+if not contains $_asdf_shims $PATH
+    set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
+

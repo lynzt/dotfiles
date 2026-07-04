@@ -1,5 +1,8 @@
+.DS_Store
+
 /*
 !.gitignore
+
 
 !/fish
 /fish/*
@@ -9,6 +12,7 @@
 nvim/*
 !/nvim/init.vim
 !/nvim/init.lua
+!/nvim/lua
 
 !/tmux
 tmux/*
