@@ -58,3 +58,8 @@ karabiner/*
 !/borders
 borders/*
 !borders/bordersrc
+
+!/starship
+starship/*
+!/starship/*
+
